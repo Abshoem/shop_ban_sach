@@ -56,4 +56,8 @@ Route::resource('products', ProductController::class);
 
     Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
 
+    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+
+
+
 });

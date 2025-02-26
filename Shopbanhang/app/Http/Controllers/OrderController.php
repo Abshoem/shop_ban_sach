@@ -32,6 +32,37 @@ class OrderController extends Controller
     return back()->with('success', 'Cập nhật số lượng thành công.');
 }
 
+public function store(Request $request)
+{
+    $request->validate([
+        'customer_name' => 'required|string|max:255',
+        'customer_phone' => 'required|string|max:15',
+        'customer_address' => 'required|string|max:500',
+    ]);
+
+    $cartItems = session()->get('cart', []);
+
+    dd($cartItems, $request->all()); // Kiểm tra dữ liệu trước khi lưu
+
+    foreach ($cartItems as $item) {
+        Order::create([
+            'product_id' => $item['id'],
+            'name' => $item['name'],
+            'price' => $item['price'],
+            'img' => $item['img'],
+            'quantity' => $item['quantity'],
+            'order_time' => now(),
+            'customer_name' => $request->customer_name,
+            'customer_phone' => $request->customer_phone,
+            'customer_address' => $request->customer_address,
+        ]);
+    }
+
+    session()->forget('cart');
+
+    return redirect()->route('orders.index')->with('success', 'Đặt hàng thành công!');
+}
+
 
     public function destroy($id): RedirectResponse
 {

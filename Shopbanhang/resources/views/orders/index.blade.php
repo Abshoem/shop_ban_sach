@@ -22,14 +22,7 @@
                         </div>
                     </li>
                     @endauth
-                    <li class="nav-item">
-                        <a href="{{ route('orders.index') }}" class="btn btn-success position-relative p-2">
-                            <i class="fas fa-shopping-cart fs-5"></i>
-                            <span class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">
-                                {{ $cartCount ?? 0 }}
-                            </span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="GET">
                             @csrf
@@ -120,16 +113,16 @@
 
 
                 <!-- Nút Quay lại -->
-                <div class="d-flex justify-content-end mb-4">
+                <!-- <div class="d-flex justify-content-end mb-4">
                     <a href="{{ route('products.index') }}" class="btn btn-outline-secondary btn-lg">
                         <i class="fas fa-arrow-left me-2"></i> Quay lại
                     </a>
-                </div>
+                </div> -->
 
                 <hr class="my-4" style="border-color: #28a745;">
 
                 <!-- Form Thanh Toán -->
-                <form method="POST" id="paymentForm">
+                <form method="POST" id="paymentForm" action="{{ route('orders.store') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="customerName" class="form-label">Tên</label>
