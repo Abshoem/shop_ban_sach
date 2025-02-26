@@ -46,4 +46,6 @@ Route::resource('products', ProductController::class);
     Route::get('products/{id}/buy-products', [ProductController::class, 'buyAndRedirectToProducts'])->name('products.buy.products');
 
 
+    Route::get('/listorder', [OrderController::class, 'listOrder'])->name('orders.list');
+
 });

@@ -14,6 +14,11 @@ class OrderController extends Controller
 
         return view('orders.index', compact('orders'));
     }
+    public function listOrder()
+    {
+        $orders = Order::paginate(5);
+        return view('categories.order', compact('orders'));
+    }
 
     public function destroy($id): RedirectResponse
 {
