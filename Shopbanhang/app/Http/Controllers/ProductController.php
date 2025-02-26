@@ -28,6 +28,12 @@ class ProductController extends Controller
         $query->where('name', 'like', '%' . $request->search . '%');
     }
 
+    // Kiểm tra nếu có category
+    if ($request->has('category') && !empty($request->category)) {
+        $query->where('category_id', $request->category);
+    }
+
+
     // Lấy danh sách sản phẩm có phân trang
     $products = $query->latest()->paginate(9);
 

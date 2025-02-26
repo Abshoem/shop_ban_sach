@@ -8,6 +8,10 @@
     <!-- Import CSS -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('script/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('script/chart-bar-demo.js') }}"></script>
+    <script src="{{ asset('script/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('script/datables-demo.js') }}"></script>
 </head>
 <body>
     <!-- HEADER -->

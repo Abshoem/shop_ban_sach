@@ -48,4 +48,12 @@ Route::resource('products', ProductController::class);
 
     Route::get('/listorder', [OrderController::class, 'listOrder'])->name('orders.list');
 
+
+
+    Route::get('/dashboard', function () {
+        return view('layouts.dashboard');
+    })->name('dashboard');
+
+    Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+
 });

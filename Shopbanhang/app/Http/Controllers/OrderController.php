@@ -20,6 +20,19 @@ class OrderController extends Controller
         return view('categories.order', compact('orders'));
     }
 
+    public function update(Request $request, Order $order)
+{
+    $request->validate([
+        'quantity' => 'required|integer|min:1',
+    ]);
+
+    $order->quantity = $request->quantity;
+    $order->save();
+
+    return back()->with('success', 'Cập nhật số lượng thành công.');
+}
+
+
     public function destroy($id): RedirectResponse
 {
     $order = Order::findOrFail($id);

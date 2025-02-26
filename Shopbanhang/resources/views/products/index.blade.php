@@ -5,15 +5,25 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold text-success fs-3" href="#">
+            <a class="navbar-brand fw-bold text-success fs-3" href="/products">
                 <i class="fas fa-book-open me-2"></i>Sách Hay
             </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <!-- Right Navigation Items -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
                 <ul class="navbar-nav align-items-center gap-3">
                     @auth
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-lg-block">
                         <div class="d-flex align-items-center">
                             <i class="fas fa-user-circle me-2 text-success fs-5"></i>
                             <span class="text-dark fw-medium">{{ Auth::user()->name }}</span>
@@ -70,16 +80,22 @@
 
         <!-- Category Filter -->
         <div class="mb-5">
-            <h4 class="fw-bold mb-4 text-secondary">Danh mục sách</h4>
-            <div class="d-flex flex-wrap gap-3">
-                @foreach ($categories as $category)
-                <a href="{{ route('products.index', ['category' => $category->id]) }}"
-                   class="btn btn-outline-success btn-lg px-4 rounded-pill shadow-sm">
-                    {{ $category->name }}
-                </a>
-                @endforeach
-            </div>
-        </div>
+    <h4 class="fw-bold mb-4 text-secondary">Danh mục sách</h4>
+    <div class="d-flex flex-wrap gap-3">
+        <!-- Thêm nút "Tất cả" -->
+        <a href="{{ url('/products') }}" class="btn btn-outline-success btn-lg px-4 rounded-pill shadow-sm">
+            Tất cả
+        </a>
+
+        @foreach ($categories as $category)
+            <a href="{{ route('products.index', ['category' => $category->id]) }}"
+               class="btn btn-outline-success btn-lg px-4 rounded-pill shadow-sm">
+                {{ $category->name }}
+            </a>
+        @endforeach
+    </div>
+</div>
+
 
         <!-- Product Grid -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
