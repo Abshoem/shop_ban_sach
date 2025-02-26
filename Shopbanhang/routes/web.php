@@ -9,7 +9,8 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\RateController;
-
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\TransactionController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -58,6 +59,10 @@ Route::resource('products', ProductController::class);
 
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 
+    Route::post('/orders/checkout', [OrderController::class, 'checkout'])->name('orders.checkout');
 
+    Route::delete('/transactions/{id}', [OrderController::class, 'deleteTransaction'])->name('transactions.destroy');
+
+    Route::get('/orders/search', [OrderController::class, 'search'])->name('orders.search');
 
 });

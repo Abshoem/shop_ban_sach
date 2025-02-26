@@ -122,7 +122,7 @@
                 <hr class="my-4" style="border-color: #28a745;">
 
                 <!-- Form Thanh Toán -->
-                <form method="POST" id="paymentForm" action="{{ route('orders.store') }}">
+                <form method="POST" id="paymentForm" action="{{ route('orders.checkout') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="customerName" class="form-label">Tên</label>
