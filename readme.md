@@ -1,235 +1,249 @@
-Website Bán Sách - Laravel Project
 
-Giới thiệu
+`# Laravel BookStore
 
-Dự án này là một website bán sách trực tuyến được xây dựng bằng Laravel. Website cho phép người dùng tìm sách, thêm vào giỏ hàng, thanh toán. Admin có thể quản lý loại sách, sản phẩm sách và đơn hàng của người dùng.
+## Mục Lục
+- [Giới thiệu dự án](#giới-thiệu-dự-án)
+- [Tính năng chính](#tính-năng-chính)
+- [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+- [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
+- [Hướng dẫn cài đặt](#hướng-dẫn-cài-đặt)
+- [Cấu hình dự án](#cấu-hình-dự-án)
+- [Cấu trúc thư mục](#cấu-trúc-thư-mục)
+- [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+- [Đóng góp](#đóng-góp)
+- [Tài liệu tham khảo & Liên hệ](#tài-liệu-tham-khao--liên-hệ)
+- [Giấy phép](#giấy-phép)
+- [Lời kết](#lời-kết)
 
-Tính năng chính
+## Giới thiệu dự án
 
-Người dùng (User)
+**Laravel BookStore** là một ứng dụng website bán sách được xây dựng trên nền tảng Laravel nhằm cung cấp trải nghiệm mua sắm trực tuyến tiện lợi và an toàn. Mục tiêu của dự án là tạo ra một nền tảng thương mại điện tử chuyên nghiệp, cho phép người dùng duyệt, tìm kiếm và mua sách một cách dễ dàng. Các quản trị viên có thể dễ dàng quản lý sản phẩm, đơn hàng, người dùng và các thông tin liên quan qua giao diện quản trị thân thiện.
 
-Đăng ký, đăng nhập, đăng xuất (Laravel Breeze authentication)
-
-Xem danh sách sách theo danh mục
-
-Tìm kiếm sách theo từ khóa
-
-Xem chi tiết sách
-
-Thêm sách vào giỏ hàng
-
-Đặt hàng và thanh toán
-
-Theo dõi trạng thái đơn hàng
-
-Cập nhật thông tin tài khoản
-
-Quản trị viên (Admin)
-
-Quản lý danh mục sách (Thêm/Sửa/Xóa)
-
-Quản lý sách (Thêm/Sửa/Xóa)
-
-Quản lý đơn hàng (Cập nhật trạng thái đơn hàng)
+**Các mục đích chính của dự án:**
+- **Tối ưu trải nghiệm người dùng:** Giao diện trực quan, responsive trên mọi thiết bị.
+- **Bảo mật và tin cậy:** Ứng dụng được xây dựng với các tiêu chuẩn bảo mật cao.
+- **Quản lý sản phẩm hiệu quả:** Cho phép quản lý danh mục sách, cập nhật thông tin chi tiết, hình ảnh, giá cả và khuyến mãi.
+- **Quản lý đơn hàng và thanh toán:** Hỗ trợ quá trình thanh toán trực tuyến và quản lý đơn hàng từ lúc đặt hàng đến giao hàng.
 
 
+## Tính năng chính
 
-Công nghệ sử dụng
+- **Đăng ký/Đăng nhập người dùng:** Cho phép người dùng đăng ký tài khoản và đăng nhập an toàn.
+- **Quản lý danh mục sản phẩm:** Sắp xếp sách theo danh mục, tác giả, thể loại.
+- **Tìm kiếm và lọc sản phẩm:** Tích hợp chức năng tìm kiếm .
+- **Giỏ hàng và thanh toán:** Hỗ trợ thêm sản phẩm vào giỏ hàng, cập nhật số lượng và xử lý thanh toán .
+- **Giao diện quản trị:** Quản trị viên có thể quản lý người dùng, đơn hàng, sản phẩm và xem báo cáo thống kê.
 
-Laravel: Framework PHP mạnh mẽ để xây dựng backend
+## Công nghệ sử dụng
 
-MySQL: Hệ quản trị cơ sở dữ liệu
+Laravel Framework: Sử dụng phiên bản Laravel 8/9/10 (tùy theo cấu hình dự án).
 
-Railway.app: Hosting database MySQL
+PHP: Yêu cầu PHP 7.4 trở lên.
 
-Bootstrap/Tailwind CSS: Giao diện frontend
+MySQL: Là hệ quản trị cơ sở dữ liệu chính.
 
-Blade Templates: Template engine của Laravel
+Bootstrap: Xây dựng giao diện người dùng responsive, hiện đại.
 
-Laravel Breeze: Xác thực người dùng
+Composer: Quản lý các gói thư viện PHP.
 
-Middleware & Policies: Phân quyền người dùng
+Node.js & NPM: Quản lý các gói frontend và biên dịch tài sản (assets).
 
-Cấu trúc thư mục
+Git: Quản lý phiên bản mã nguồn.
 
-laravel-bookstore/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/      # Chứa các Controller của ứng dụng
-│   │   ├── Middleware/       # Middleware để xử lý request
-│   ├── Models/               # Các Model tương ứng với bảng trong DB
-│   ├── Policies/             # Phân quyền người dùng
-├── bootstrap/                # Khởi tạo ứng dụng
-├── config/                   # Các file cấu hình của Laravel
-├── database/                 # Migrations, Seeders và Factories
-├── resources/
-│   ├── views/                # Các file Blade templates
-│   ├── css/                  # File CSS (nếu có)
-├── routes/
-│   ├── web.php               # Routes cho giao diện web
-│   ├── api.php               # Routes API
-├── storage/                  # Thư mục chứa logs và uploaded files
-├── public/                   # Chứa assets (CSS, JS, hình ảnh)
-├── .env                      # File cấu hình môi trường
-├── composer.json             # Danh sách package PHP
-├── package.json              # Danh sách package frontend
-├── artisan                   # CLI command của Laravel
+## Yêu cầu hệ thống
 
-Cài đặt và chạy dự án
+- **PHP:** 8.0 trở lên
+- **Composer:** Phiên bản mới nhất
+- **MySQL:** 5.7 trở lên (hoặc MariaDB)
+- **Node.js & NPM:** Để quản lý các package cho frontend
+- **Web Server:** Apache hoặc Nginx
+  
 
-Yêu cầu hệ thống
+## Hướng dẫn cài đặt
 
-PHP >= 8.0
+### 1. Clone dự án từ GitHub
 
-Composer
-
-Node.js & npm
-
-MySQL
-
-Laravel
-
-Các bước cài đặt
-
-Clone repo:
-
+bash
 git clone https://github.com/Abshoem/shop_ban_sach.git
-cd Shopbanhang
+cd Shopbansach
 
-Cài đặt các package PHP:
+### 2. Cài đặt Composer và các package PHP
 
-composer install
+bash
 
-Cài đặt các package frontend:
+Sao chépChỉnh sửa
 
-npm install && npm run dev
+`composer install` 
 
-Sao chép file .env.example thành .env:
+### 3. Cài đặt các package NPM và build tài sản frontend
 
-cp .env.example .env
+bash
 
-Tạo khóa ứng dụng Laravel:
+Sao chépChỉnh sửa
 
-php artisan key:generate
+`npm install
+npm run dev` 
 
-Cấu hình cơ sở dữ liệu trong .env:
+### 4. Cấu hình môi trường
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=
-DB_USERNAME=root
-DB_PASSWORD=
+Tạo file `.env` từ file mẫu `.env.example`:
 
-Chạy migration và seed dữ liệu:
+bash
 
-php artisan migrate --seed
+Sao chépChỉnh sửa
 
-Khởi động server:
+`cp .env.example .env` 
 
-php artisan serve
+Cập nhật các thông tin cấu hình trong file `.env` như:
 
-Truy cập http://127.0.0.1:8000 để xem trang web.
+-   **APP_NAME:** Tên ứng dụng (ví dụ: Laravel BookStore)
+-   **APP_URL:** URL của ứng dụng (ví dụ: http://localhost)
+-   **DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD:** Thông tin kết nối cơ sở dữ liệu
+-   **MAIL_***: Cấu hình mail nếu cần thiết
+-   **CACHE_DRIVER, QUEUE_CONNECTION, SESSION_DRIVER:** Cấu hình hệ thống cache, hàng đợi và phiên làm việc
 
-API Endpoints
+Tạo key ứng dụng:
 
-Authentication
+bash
 
-Method
+Sao chépChỉnh sửa
 
-Endpoint
+`php artisan key:generate` 
 
-Description
+### 5. Thiết lập cơ sở dữ liệu
 
-POST
+-   Tạo cơ sở dữ liệu mới theo tên bạn đã cấu hình trong file `.env`.
+-   Chạy các migration:
 
-/api/register
+bash
 
-Đăng ký tài khoản
+Sao chépChỉnh sửa
 
-POST
+`php artisan migrate` 
 
-/api/login
+_(Tuỳ chọn) Seed dữ liệu mẫu:_
 
-Đăng nhập
+bash
 
-POST
+Sao chépChỉnh sửa
 
-/api/logout
+`php artisan db:seed` 
 
-Đăng xuất
+## Cấu hình dự án
 
-Sách
 
-Method
 
-Endpoint
+bash
 
-Description
+Sao chépChỉnh sửa
 
-GET
+`php artisan storage:link` 
 
-/api/books
+-   **Queues:** Nếu dự án sử dụng tính năng xử lý hàng đợi, hãy đảm bảo cấu hình driver cho queue (ví dụ: database, redis).
 
-Lấy danh sách sách
+### Tùy chỉnh cấu hình nâng cao
 
-GET
+-   **Tối ưu hóa hiệu năng:** Sử dụng cache, cấu hình opcache cho PHP.
+-   **Bảo mật:** Cấu hình HTTPS, cài đặt các header bảo mật và các biện pháp bảo vệ chống lại các tấn công CSRF, XSS.
+-   **API:** Nếu dự án cung cấp API, hãy tham khảo tài liệu của Laravel Sanctum hoặc Passport để triển khai xác thực API.
 
-/api/books/{id}
+## Cấu trúc thư mục
 
-Lấy thông tin sách
+Dự án Laravel có cấu trúc thư mục tiêu chuẩn như sau:
 
-Giỏ hàng & Đặt hàng
+css
 
-Method
+Sao chépChỉnh sửa
 
-Endpoint
+`Shopbansach/
+├── app/                 # Thư mục chứa mã nguồn chính của ứng dụng (Models, Controllers, Services)
+├── bootstrap/           # Tập tin bootstrap cho ứng dụng
+├── config/              # Các file cấu hình của ứng dụng
+├── database/            # Migration, seeders và factories
+├── public/              # Thư mục công khai (assets, index.php)
+├── resources/           # View, assets chưa biên dịch (CSS, JS, images)
+├── routes/              # Định nghĩa các routes cho web và API
+├── storage/             # Lưu trữ file được tải lên, cache, logs
+├── tests/               # Các file kiểm thử (unit tests, feature tests)
+└── vendor/              # Các package được cài đặt thông qua Composer` 
 
-Description
+Mỗi thư mục có vai trò cụ thể giúp tách biệt logic và tăng tính mở rộng của ứng dụng.
 
-POST
+## Hướng dẫn sử dụng
 
-/api/cart
+### Đối với người dùng (Frontend)
 
-Thêm sách vào giỏ hàng
+-   **Trang chủ:** Hiển thị các sách danh mục sách.
+-   **Tìm kiếm:** Sử dụng thanh tìm kiếm để tìm sách theo tên thể loại.
+-   **Giỏ hàng:** Thêm sách vào giỏ hàng, cập nhật số lượng và xóa sản phẩm không cần thiết.
+-   **Thanh toán:** Xử lý đơn hàng và thanh toán trực tuyến một cách an toàn.
 
-GET
 
-/api/cart
+### Đối với quản trị viên (Backend)
 
-Xem giỏ hàng
+-   **Đăng nhập quản trị:** Đăng nhập vào trang quản trị để quản lý hệ thống.
+-   **Quản lý sách:** Thêm, sửa, xoá sách, cập nhật thông tin và hình ảnh sản phẩm.
+-   **Quản lý đơn hàng:** Xem, xử lý và theo dõi tình trạng đơn hàng.
 
-POST
 
-/api/checkout
 
-Đặt hàng
 
-Tài khoản mẫu
+## Đóng góp
 
-Admin:
+Chúng tôi luôn hoan nghênh sự đóng góp từ cộng đồng nhằm cải thiện và mở rộng dự án. Nếu bạn muốn đóng góp, hãy tuân theo các bước sau:
 
-Email: admin@example.com
+1.  **Fork repository**
+    
+2.  **Tạo branch tính năng mới:**
+    
+    bash
+    
+    Sao chépChỉnh sửa
+    
+    `git checkout -b feature/ten-tinh-nang` 
+    
+3.  **Commit thay đổi của bạn với mô tả rõ ràng:**
+    
+    bash
+    
+    Sao chépChỉnh sửa
+    
+    `git commit -m "Thêm tính năng XYZ"` 
+    
+4.  **Push branch lên repository của bạn:**
+    
+    bash
+    
+    Sao chépChỉnh sửa
+    
+    `git push origin feature/ten-tinh-nang` 
+    
+5.  **Mở Pull Request:**
+    
+    -   Mô tả chi tiết thay đổi của bạn và liên kết tới các vấn đề (issues) liên quan (nếu có).
+    -   Chúng tôi sẽ xem xét và phản hồi trong thời gian sớm nhất.
 
-Mật khẩu: admin123
+## Tài liệu tham khảo & Liên hệ
 
-User:
+-   **Tài liệu Laravel:** [Laravel Documentation](https://laravel.com/docs)
+-   **Hướng dẫn cài đặt Composer:** [Composer Official](https://getcomposer.org)
+-   **Bootstrap:** [Bootstrap Documentation](https://getbootstrap.com)
+-   **Các bài viết liên quan:**
+    -   Hướng dẫn sử dụng Laravel cho người mới bắt đầu
+    -   Các best practices về bảo mật trong Laravel
 
-Email: user@example.com
+Nếu có bất kỳ thắc mắc hay ý kiến đóng góp, vui lòng liên hệ qua email: [email@example.com] hoặc tạo issue trên repository GitHub.
 
-Mật khẩu: user123
+## Giấy phép
 
-Phân quyền
+Dự án này được cấp phép theo giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
-Người dùng chỉ có thể xem và mua sách.
+## Lời kết
 
-Admin có thể thêm, sửa, xóa sách và quản lý đơn hàng.
+**Laravel BookStore** được xây dựng với mong muốn tạo ra một nền tảng mua sắm sách trực tuyến tiện ích, hiện đại và bảo mật cao. Chúng tôi hi vọng rằng dự án sẽ giúp ích cho những ai đang tìm kiếm giải pháp thương mại điện tử chất lượng. Cảm ơn bạn đã sử dụng và đóng góp cho dự án!
 
-Đóng góp
+_Chúc bạn thành công với dự án Laravel Website bán sách của mình!_
 
-Nếu bạn muốn đóng góp cho dự án, vui lòng fork repository, tạo một branch mới, commit thay đổi và gửi pull request.
+yaml
 
-Giấy phép
-
-Dự án này được phát hành dưới giấy phép MIT.
-
+Sao chépChỉnh sửa
