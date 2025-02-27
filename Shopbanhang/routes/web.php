@@ -65,4 +65,8 @@ Route::resource('products', ProductController::class);
 
     Route::get('/orders/search', [OrderController::class, 'search'])->name('orders.search');
 
+
+    Route::get('/dashboard', [OrderController::class, 'dashboard'])->name('dashboard');
+
+
 });

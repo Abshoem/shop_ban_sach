@@ -5,13 +5,13 @@
 @section('content')
 <main class="container mt-5">
     <div class="mb-4 text-center">
-        <h1 class="display-4 text-gray-300">QUẢN LÝ DANH MỤC</h1>
+        <h1 class="display-4 text-black-300">QUẢN LÝ THỂ LOẠI SÁCH</h1>
     </div>
 
     <div class="card mb-5 border-0 shadow-dark">
         <div class="card-header bg-gray-800 border-bottom border-gray-700 d-flex justify-content-between align-items-center py-3">
             <h2 class="mb-0 text-gray-300">
-                <i class="fas fa-boxes mr-2"></i>DANH SÁCH DANH MỤC
+                <i class="fas fa-boxes mr-2"></i>DANH SÁCH THỂ LOẠI
             </h2>
             <a href="{{ route('categories.create') }}" class="btn btn-gray-300 btn-sm">
                 <i class="fas fa-plus-circle mr-1"></i> Thêm Mới
@@ -28,7 +28,7 @@
                     <thead class="bg-gray-700">
                         <tr>
                             <th width="80px" class="text-center text-gray-400">STT</th>
-                            <th class="text-gray-400">TÊN DANH MỤC</th>
+                            <th class="text-gray-400">THỂ LOẠI</th>
                             <th class="text-center text-gray-400">THAO TÁC</th>
                         </tr>
                     </thead>

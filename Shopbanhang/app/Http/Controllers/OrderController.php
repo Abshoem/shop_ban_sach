@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Category;
+use App\Models\Product;
+
 use Illuminate\Http\RedirectResponse;
 use App\Models\Transaction;
 class OrderController extends Controller
@@ -87,6 +90,19 @@ public function deleteTransaction($id)
 
     $transaction->delete();
     return redirect()->route('orders.list')->with('success', 'Xóa giao dịch thành công!');
+}
+
+public function dashboard(): View
+{
+    // Số loại sách
+    $categoriesCount = Category::count();
+    // Số sách (product)
+    $productsCount = Product::count();
+    // Số đơn hàng (có thể tính từ bảng orders hoặc transactions tùy nhu cầu)
+    $ordersCount = Order::count();
+
+    return view('layouts.dashboard', compact('categoriesCount', 'productsCount', 'ordersCount'));
+
 }
 
 
