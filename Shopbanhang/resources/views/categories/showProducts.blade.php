@@ -9,7 +9,7 @@
         <main class="container mt-4">
             <div class="card shadow-dark border-0 rounded-xl overflow-hidden">
                 <div class="card-header bg-gray-800 border-bottom border-gray-700 py-3 d-flex justify-content-between align-items-center">
-                    <h2 class="mb-0 text-black-300">
+                    <h2 class="mb-0 text-gray-300">
                         <i class="fas fa-box-open mr-2"></i>QUẢN LÝ SẢN PHẨM
                     </h2>
                     <a class="btn btn-gray-300 btn-sm" href="{{ route('categories.index') }}">
