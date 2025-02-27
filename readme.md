@@ -1,6 +1,7 @@
 
 # Laravel BookStore
 # Link repo : https://github.com/Abshoem/shop_ban_sach
+# Link demo : https://drive.google.com/drive/folders/1Jt0ijsamFiL_iqSRyl2dsVVZaLGFgAnw?usp=sharing
 ## Api Document [tại đây](https://github.com/Abshoem/shop_ban_sach/wiki)
 ## Tài liệu dự án chi tiết [tại đây](https://absheom-my.sharepoint.com/:b:/g/personal/zkeen_absheom_onmicrosoft_com/Ef6y89ypnChGjYPgDsHm8WgBKag17n7JZYbaSkCqaGXaQg?e=IhVdTe)
 ## Mục Lục
