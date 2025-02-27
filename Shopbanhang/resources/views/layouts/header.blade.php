@@ -62,5 +62,16 @@
                 </li>
             </ul>
         </nav>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener("click", function () {
+            document.body.classList.toggle("sb-sidenav-toggled");
+        });
+    }
+});
+
+        </script>
 
 </body>
