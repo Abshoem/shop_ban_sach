@@ -2,7 +2,7 @@
 # Laravel BookStore
 
 ## Api Document [tại đây](https://github.com/Abshoem/shop_ban_sach/wiki)
-## Tài liệu dự án chi tiết [tại đây]([https://absheom-my.sharepoint.com/:w:/g/personal/zkeen_absheom_onmicrosoft_com/EcjXWJHXys5FjtnBgQT30fUB65Yq-5hYFEdCPbJNQmmKdA?e=a6qpjL](https://absheom-my.sharepoint.com/:b:/g/personal/zkeen_absheom_onmicrosoft_com/Ef6y89ypnChGjYPgDsHm8WgBKag17n7JZYbaSkCqaGXaQg?e=ds0eIQ))
+## Tài liệu dự án chi tiết [tại đây](https://absheom-my.sharepoint.com/:w:/g/personal/zkeen_absheom_onmicrosoft_com/EcjXWJHXys5FjtnBgQT30fUB65Yq-5hYFEdCPbJNQmmKdA?e=a6qpjL](https://absheom-my.sharepoint.com/:b:/g/personal/zkeen_absheom_onmicrosoft_com/Ef6y89ypnChGjYPgDsHm8WgBKag17n7JZYbaSkCqaGXaQg?e=ds0eIQ)
 ## Mục Lục
 - [Giới thiệu dự án](#giới-thiệu-dự-án)
 - [Tính năng chính](#tính-năng-chính)
