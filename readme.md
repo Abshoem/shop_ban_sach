@@ -12,6 +12,7 @@
 - [Cấu hình dự án](#cấu-hình-dự-án)
 - [Cấu trúc thư mục](#cấu-trúc-thư-mục)
 - [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+- [Hình-ảnh-trang-web](#hình-ảnh-web)
 - [Đóng góp](#đóng-góp)
 - [Lời kết](#lời-kết)
 
@@ -172,7 +173,26 @@ Mỗi thư mục có vai trò cụ thể giúp tách biệt logic và tăng tín
 -   **Quản lý sách:** Thêm, sửa, xoá sách, cập nhật thông tin và hình ảnh sản phẩm.
 -   **Quản lý đơn hàng:** Xem, xử lý và theo dõi tình trạng đơn hàng.
 
+## Giao diện minh hoạ
 
+### Giao diện minh hoạ cho chức năng đăng ký
+<img src="img/Picture1.jpg" alt="Giao diện đăng ký">
+
+### Giao diện minh hoạ cho chức năng đăng nhập
+<img src="img/Picture2.png" alt="Giao diện đăng nhập">
+
+### Giao diện màn hình dashboard
+<img src="img/Picture3.png" alt="Giao diện dashboard">
+
+### Giao diện màn hình quản lý loại sách
+<img src="img/Picture4.png" alt="Giao diện quản lý loại sách">
+
+### Giao diện màn hình quản lý sản phẩm
+<img src="img/Picture6.png" alt="Giao diện quản lý sản phẩm">
+
+
+### Giao diện màn hình sản phẩm
+<img src="img/Picture10.png" alt="Giao diện danh sách đơn hàng">
 
 
 ## Đóng góp
