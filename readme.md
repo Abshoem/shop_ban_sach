@@ -30,7 +30,7 @@
 ## Tính năng chính
 
 - **Đăng ký/Đăng nhập người dùng:** Cho phép người dùng đăng ký tài khoản và đăng nhập an toàn.
-- **Quản lý danh mục sản phẩm:** Sắp xếp sách theo danh mục, tác giả, thể loại.
+- **Quản lý danh mục sản phẩm:** Sắp xếp sách theo danh mục.
 - **Tìm kiếm và lọc sản phẩm:** Tích hợp chức năng tìm kiếm .
 - **Giỏ hàng và thanh toán:** Hỗ trợ thêm sản phẩm vào giỏ hàng, cập nhật số lượng và xử lý thanh toán .
 - **Giao diện quản trị:** Quản trị viên có thể quản lý người dùng, đơn hàng, sản phẩm và xem báo cáo thống kê.
