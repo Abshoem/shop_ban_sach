@@ -1,5 +1,5 @@
 
-`# Laravel BookStore
+# Laravel BookStore
 
 ## Mục Lục
 - [Giới thiệu dự án](#giới-thiệu-dự-án)
@@ -11,8 +11,6 @@
 - [Cấu trúc thư mục](#cấu-trúc-thư-mục)
 - [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
 - [Đóng góp](#đóng-góp)
-- [Tài liệu tham khảo & Liên hệ](#tài-liệu-tham-khao--liên-hệ)
-- [Giấy phép](#giấy-phép)
 - [Lời kết](#lời-kết)
 
 ## Giới thiệu dự án
@@ -63,23 +61,20 @@ Git: Quản lý phiên bản mã nguồn.
 
 ### 1. Clone dự án từ GitHub
 
-bash
-git clone https://github.com/Abshoem/shop_ban_sach.git
-cd Shopbansach
+*bash*
+*git clone https://github.com/Abshoem/shop_ban_sach.git*
+
+*cd Shopbansach*
 
 ### 2. Cài đặt Composer và các package PHP
 
-bash
-
-Sao chépChỉnh sửa
+*bash*
 
 `composer install` 
 
 ### 3. Cài đặt các package NPM và build tài sản frontend
 
-bash
-
-Sao chépChỉnh sửa
+*bash*
 
 `npm install
 npm run dev` 
@@ -90,7 +85,6 @@ Tạo file `.env` từ file mẫu `.env.example`:
 
 bash
 
-Sao chépChỉnh sửa
 
 `cp .env.example .env` 
 
@@ -106,7 +100,6 @@ Tạo key ứng dụng:
 
 bash
 
-Sao chépChỉnh sửa
 
 `php artisan key:generate` 
 
@@ -117,25 +110,18 @@ Sao chépChỉnh sửa
 
 bash
 
-Sao chépChỉnh sửa
-
 `php artisan migrate` 
 
 _(Tuỳ chọn) Seed dữ liệu mẫu:_
 
 bash
 
-Sao chépChỉnh sửa
-
 `php artisan db:seed` 
 
 ## Cấu hình dự án
 
 
-
 bash
-
-Sao chépChỉnh sửa
 
 `php artisan storage:link` 
 
@@ -151,11 +137,8 @@ Sao chépChỉnh sửa
 
 Dự án Laravel có cấu trúc thư mục tiêu chuẩn như sau:
 
-css
-
-Sao chépChỉnh sửa
-
-`Shopbansach/
+```plaintext
+Shopbansach/
 ├── app/                 # Thư mục chứa mã nguồn chính của ứng dụng (Models, Controllers, Services)
 ├── bootstrap/           # Tập tin bootstrap cho ứng dụng
 ├── config/              # Các file cấu hình của ứng dụng
@@ -165,7 +148,9 @@ Sao chépChỉnh sửa
 ├── routes/              # Định nghĩa các routes cho web và API
 ├── storage/             # Lưu trữ file được tải lên, cache, logs
 ├── tests/               # Các file kiểm thử (unit tests, feature tests)
-└── vendor/              # Các package được cài đặt thông qua Composer` 
+└── vendor/              # Các package được cài đặt thông qua Composer
+```
+
 
 Mỗi thư mục có vai trò cụ thể giúp tách biệt logic và tăng tính mở rộng của ứng dụng.
 
@@ -198,23 +183,19 @@ Chúng tôi luôn hoan nghênh sự đóng góp từ cộng đồng nhằm cải
     
     bash
     
-    Sao chépChỉnh sửa
     
     `git checkout -b feature/ten-tinh-nang` 
     
 3.  **Commit thay đổi của bạn với mô tả rõ ràng:**
     
     bash
-    
-    Sao chépChỉnh sửa
+
     
     `git commit -m "Thêm tính năng XYZ"` 
     
 4.  **Push branch lên repository của bạn:**
     
     bash
-    
-    Sao chépChỉnh sửa
     
     `git push origin feature/ten-tinh-nang` 
     
@@ -232,11 +213,9 @@ Chúng tôi luôn hoan nghênh sự đóng góp từ cộng đồng nhằm cải
     -   Hướng dẫn sử dụng Laravel cho người mới bắt đầu
     -   Các best practices về bảo mật trong Laravel
 
-Nếu có bất kỳ thắc mắc hay ý kiến đóng góp, vui lòng liên hệ qua email: [email@example.com] hoặc tạo issue trên repository GitHub.
+Nếu có bất kỳ thắc mắc hay ý kiến đóng góp, vui lòng liên hệ qua email: [thangpka24@gmail.com] hoặc tạo issue trên repository GitHub.
 
-## Giấy phép
 
-Dự án này được cấp phép theo giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ## Lời kết
 
@@ -244,6 +223,3 @@ Dự án này được cấp phép theo giấy phép MIT. Xem file [LICENSE](LIC
 
 _Chúc bạn thành công với dự án Laravel Website bán sách của mình!_
 
-yaml
-
-Sao chépChỉnh sửa
