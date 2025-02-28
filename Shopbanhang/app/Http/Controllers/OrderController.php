@@ -13,9 +13,11 @@ class OrderController extends Controller
 {
     public function index(): View
     {
-        $orders = Order::latest()->paginate(6);
+        $orders = Order::where('user_id', auth()->id())
+                   ->latest()
+                   ->paginate(6);
 
-        return view('orders.index', compact('orders'));
+    return view('orders.index', compact('orders'));
     }
 
 
@@ -47,7 +49,7 @@ public function checkout(Request $request)
         'customer_address' => 'required|string',
     ]);
 
-    $orders = Order::all(); // Lấy tất cả sản phẩm trong giỏ hàng
+    $orders = Order::where('user_id', auth()->id())->get();
     $totalPrice = $orders->sum(fn($order) => $order->price * $order->quantity);
 
     foreach ($orders as $order) {

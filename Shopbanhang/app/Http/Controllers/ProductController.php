@@ -38,7 +38,7 @@ class ProductController extends Controller
     $products = $query->latest()->paginate(9);
 
     // Lấy số lượng đơn hàng từ bảng `orders`
-    $cartCount = Order::count();
+    $cartCount = Order::where('user_id', Auth::id())->count();
 
     return view('products.index', compact('products', 'categories', 'cartCount'));
 }
@@ -82,8 +82,10 @@ public function buyAndRedirectToProducts($id)
         'product_id' => $product->id,
         'name' => $product->name,
         'price' => $product->price,
+        'user_id' => Auth::id(),
         'img' => $product->image,
         'order_time' => now(),
+        'quantity'   => 1
     ]);
 
     return redirect()->route('products.index');
