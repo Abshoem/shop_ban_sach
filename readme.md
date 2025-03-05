@@ -1,6 +1,8 @@
 
 # Laravel BookStore ( 
 # Link web của tôi [abshoem.id.vn](http://abshoem.id.vn)
+Account admin : admin@gmail.com  admin123456
+
 # Link repo : https://github.com/Abshoem/shop_ban_sach
 # Link demo : https://drive.google.com/drive/folders/1Jt0ijsamFiL_iqSRyl2dsVVZaLGFgAnw?usp=sharing
 ## Api Document [tại đây](https://github.com/Abshoem/shop_ban_sach/wiki)
