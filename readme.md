@@ -27,7 +27,7 @@
 - **Tối ưu trải nghiệm người dùng:** Giao diện trực quan, responsive trên mọi thiết bị.
 - **Bảo mật và tin cậy:** Ứng dụng được xây dựng với các tiêu chuẩn bảo mật cao.
 - **Quản lý sản phẩm hiệu quả:** Cho phép quản lý danh mục sách, cập nhật thông tin chi tiết, hình ảnh, giá cả và khuyến mãi.
-- **Quản lý đơn hàng và thanh toán:** Hỗ trợ quá trình thanh toán trực tuyến và quản lý đơn hàng từ lúc đặt hàng đến giao hàng.
+- **Quản lý đơn hàng và thanh toán:** 
 
 
 ## Tính năng chính
@@ -36,7 +36,7 @@
 - **Quản lý danh mục sản phẩm:** Sắp xếp sách theo danh mục.
 - **Tìm kiếm và lọc sản phẩm:** Tích hợp chức năng tìm kiếm .
 - **Giỏ hàng và thanh toán:** Hỗ trợ thêm sản phẩm vào giỏ hàng, cập nhật số lượng và xử lý thanh toán .
-- **Giao diện quản trị:** Quản trị viên có thể quản lý người dùng, đơn hàng, sản phẩm và xem báo cáo thống kê.
+- **Giao diện quản trị:** Quản trị viên có thể quản lý người dùng, đơn hàng, sản phẩm.
 
 ## Công nghệ sử dụng
 
